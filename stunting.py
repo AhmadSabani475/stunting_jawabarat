@@ -10,7 +10,7 @@ with open(filename, 'rb') as file:
         model = pickle.load(file)
 df = pd.read_csv('stunting.csv')
 list_kota = df['nama_kabupaten_kota'].unique()
-list_kota.sort()
+list_kota = sorted(list_kota)
 st.set_page_config(page_title="Prediksi Stunting", page_icon="👶", layout="wide")
 st.sidebar.header("🎛️ Panel Input Data")
 pilih_kota = st.sidebar.selectbox("Pilih Kabupaten/Kota:", list_kota)
